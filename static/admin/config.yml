@@ -1,7 +1,6 @@
 backend:
-  name: git-gateway
-
-local_backend: true
+  name: github
+  repo: intrepidsg/jamsite2
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
