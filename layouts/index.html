@@ -1,0 +1,27 @@
+{{ define "main" }}
+
+<main>
+	{{ partial "index/introduction.html" . }}
+
+	<div class="catalogue">
+		{{ range (.Paginate .Site.RegularPages).Pages }}
+			{{ .Render "summary" }}
+		{{ end }}
+	</div>
+
+	<div class="pagination">
+		{{ if .Paginator.HasPrev }}
+			<a href="{{ .Paginator.Prev.URL }}" class="left arrow">&#8592;</a>
+		{{ end }}
+		{{ if .Paginator.HasNext }}
+			<a href="{{ .Paginator.Next.URL }}" class="right arrow">&#8594;</a>
+		{{ end }}
+
+		<span>{{ .Paginator.PageNumber }}</span>
+	</div>
+
+	<script async src="https://cdn.snipcart.com/themes/v3.0.26/default/snipcart.js"></script>
+	<div hidden id="snipcart" data-api-key="OGVjMzJmZmUtMzZiZS00N2M4LTg2NzItYzk2Nzg3MzBhNzRkNjM3MzkwOTQwNjc4NTE5MzE4"></div>
+</main>
+
+{{ end }}
